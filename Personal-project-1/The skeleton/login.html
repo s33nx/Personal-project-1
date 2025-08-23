@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login: SEEN_X DESIGNS.</title>
+    <link rel="stylesheet" href="../css/styleSheet.css">
+    
+    
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="../image/design.png" alt="S33N_X DESIGNS Logo" class="loading-logo">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <div class="Login-S33N_X">
+           
+        </div>
+        
+        <div class="container">
+            <div class="header">
+            <h2>Login</h2>    
+             <p class="ref">
+                Don't have an account? <a href="signup.html">Sign-up</a>
+             </p>
+            </div>
+            
+            <form action="" class="form" id="form">
+                <div class="form-control ">
+                    <label for="Username">Username</label>
+                    <input type="text" placeholder="S33n_X" id="Username">
+                    <small>Error Message</small>
+                </div>
+
+                <div class="form-control ">
+                    <label for="email">E-mail</label>
+                    <input type="email" placeholder="eg, s33nx@sth.com" id="email">
+                    <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="******" id="password">
+                    <small>Error Message</small>
+                </div>
+
+                
+
+
+                    <button><a href="./Index.html">Login</a></button>
+                
+            </form>
+        </div>
+
+        
+
+        </form>
+
+        
+        <script lang="javascript" type="text/javascript" src="../js/Validate.js">
+
+        </script>
+        <script>
+            // Hide loading screen when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.opacity = '0';
+                    document.body.classList.add('loaded');
+                    setTimeout(function() {
+                        document.getElementById('loading-screen').style.display = 'none';
+                    }, 500);
+                }, 1000); // Show loading screen for at least 1 second
+            });
+        </script>
+</body>
+</html>

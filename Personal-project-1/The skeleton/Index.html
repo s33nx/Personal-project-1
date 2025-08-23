@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        S33N_X DESIGNS.
+    </title>
+    <link rel="stylesheet" href="../css/styleSheet.css">
+</head>
+<body class="different">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="../image/design.png" alt="S33N_X DESIGNS Logo" class="loading-logo">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <header class="flex">
+    <p><a href="signup.html">
+        Signup
+    </a>
+    /
+        <a href="./login.html">Login</a>
+</p>
+</header>
+
+<section class="welcome">
+    <h2 class="welcome-text">
+        WELCOME TO S33N_X DESIGNS.
+    </h2>
+    <p class="text-within">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
+         Necessitatibus autem odio magnam suscipit illo deserunt repudiandae. Enim velit quas commodi. <br>
+         Iste quae praesentium delectus ut neque provident adipisci corrupti repellat.
+    </p>
+
+</section>
+
+<div class="about">
+    <section class="about-us">
+        
+        <h3>About us</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+             Neque et explicabo reprehenderit unde nam ipsam perferendis distinctio. <br>
+              Sapiente vero asperiores quisquam ducimus odio dolorum deleniti. <br>
+             Fuga placeat eius reprehenderit accusamus! <br>
+        </p>
+    </section>
+</div>
+
+
+<div class="">
+    <section class=""><h3>
+        Contact us
+    </h3>
+    <br>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Facilis totam laboriosam doloremque enim rerum assumenda culpa similique suscipit reprehenderit vel cum nobis mollitia dolorum laborum dolorem, saepe magni nisi deleniti.
+    </p>
+
+    </section>
+</div>
+     <script lang="javascript" type="text/javascript" src="../js/Validate.js"></script>
+     <script>
+        // Hide loading screen when page is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.opacity = '0';
+                document.body.classList.add('loaded');
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 1000); // Show loading screen for at least 1 second
+        });
+     </script>
+</body>
+</html>
