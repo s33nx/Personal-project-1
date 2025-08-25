@@ -2,6 +2,7 @@ body{
     background: url(../image/Background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,10 +179,181 @@ body.loaded > *:not(#loading-screen) {
     display: flex;
     align-content: center;
     align-items: center;
-    background-color: aqua;
     border: 2px solid black;
     width: fit-content;
     
+}
+
+/* NEON DESIGN STYLES */
+.multi-color {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: neonPulse 2s infinite alternate;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #ff00de,
+        0 0 35px #ff00de,
+        0 0 40px #ff00de,
+        0 0 50px #ff00de,
+        0 0 75px #ff00de;
+    background: linear-gradient(45deg, #ff00de, #00ffff, #ff00de);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.multi-color:hover {
+    animation: neonFlicker 0.5s infinite alternate;
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #ff00de,
+        0 0 70px #ff00de,
+        0 0 80px #ff00de,
+        0 0 100px #ff00de,
+        0 0 150px #ff00de;
+    transform: scale(1.05);
+}
+
+/* Alternative neon color variations */
+.neon-blue {
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #00ffff,
+        0 0 35px #00ffff,
+        0 0 40px #00ffff,
+        0 0 50px #00ffff,
+        0 0 75px #00ffff;
+    background: linear-gradient(45deg, #00ffff, #0077ff, #00ffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neon-green {
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #39ff14,
+        0 0 35px #39ff14,
+        0 0 40px #39ff14,
+        0 0 50px #39ff14,
+        0 0 75px #39ff14;
+    background: linear-gradient(45deg, #39ff14, #00ff00, #39ff14);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neon-red {
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #ff073a,
+        0 0 35px #ff073a,
+        0 0 40px #ff073a,
+        0 0 50px #ff073a,
+        0 0 75px #ff073a;
+    background: linear-gradient(45deg, #ff073a, #ff0000, #ff073a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Neon animations */
+@keyframes neonPulse {
+    from {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #fff,
+            0 0 20px #ff00de,
+            0 0 35px #ff00de,
+            0 0 40px #ff00de,
+            0 0 50px #ff00de,
+            0 0 75px #ff00de;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #ff00de,
+            0 0 70px #ff00de,
+            0 0 80px #ff00de,
+            0 0 100px #ff00de,
+            0 0 150px #ff00de;
+    }
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #ff00de,
+            0 0 70px #ff00de,
+            0 0 80px #ff00de,
+            0 0 100px #ff00de,
+            0 0 150px #ff00de;
+    }
+    20%, 24%, 55% {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #fff,
+            0 0 20px #ff00de,
+            0 0 35px #ff00de,
+            0 0 40px #ff00de,
+            0 0 50px #ff00de,
+            0 0 75px #ff00de;
+    }
+}
+
+/* Welcome text container adjustments for better neon visibility */
+.welcome-text {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.welcome-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Responsive neon adjustments */
+@media (max-width: 768px) {
+    .multi-color {
+        font-size: 1.8rem;
+        text-shadow: 
+            0 0 3px #fff,
+            0 0 6px #fff,
+            0 0 9px #fff,
+            0 0 12px #ff00de,
+            0 0 18px #ff00de,
+            0 0 21px #ff00de,
+            0 0 24px #ff00de,
+            0 0 30px #ff00de;
+    }
+    
+    .welcome-text h1 {
+        font-size: 2rem;
+    }
 }
 
 
