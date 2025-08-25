@@ -1,7 +1,7 @@
 body{
-    background: url(../image/logo.png);
-    background-repeat: repeat;
-    background-size: contain;
+    background: url(../image/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,9 @@ body{
 .different{
     display: inline;
     text-decoration: none;
-     background: url(../image/logo.png);
+     background: url(../image/Background.png);
+     background-repeat: no-repeat;
+     background-size: cover;
    
 }
 
@@ -179,10 +181,6 @@ body.loaded > *:not(#loading-screen) {
     background-color: aqua;
     border: 2px solid black;
     width: fit-content;
-    
-}
-
-.about-us{
     
 }
 
