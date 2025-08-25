@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (usernameValue && emailValue && passwordValue && password2Value) {
             window.location.href = './Index.html'; // Redirect to the index page
         }
+        else {
+            
+        }
     }
 
     function errorMessageFor(input, message) {
