@@ -1,5 +1,3 @@
-// Adding the js styles
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form");
     const username = document.getElementById("Username");
@@ -9,67 +7,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        checkinput();
+        checkInput();
     });
 
-    function checkinput() {
-        // Get the values from the inputs
-        const usernameValue = username.value.trim(); // Removes unnecessary space.
+    function checkInput() {
+        const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
 
+        let isValid = true; // Track overall validity
+
         if (usernameValue === "") {
             errorMessageFor(username, "Username cannot be blank");
-        } else if (usernameValue.length < 6) {
-            errorMessageFor(username, "Username must be at least 6 characters long");
+            isValid = false;
         } else {
             successMessageFor(username);
         }
 
-        // Add validation for other fields as needed
-        // For email
         if (emailValue === "") {
             errorMessageFor(email, "Email cannot be blank");
+            isValid = false;
         } else {
             successMessageFor(email);
         }
 
-        // For password
         if (passwordValue === "") {
             errorMessageFor(password, "Password cannot be blank");
-        } else if (passwordValue.length < 6) {
-            errorMessageFor(password, "Password must be at least 6 characters");
+            isValid = false;
         } else {
             successMessageFor(password);
         }
 
-        // Confirm Password
         if (password2Value === "") {
             errorMessageFor(password2, "Confirm password cannot be blank");
+            isValid = false;
         } else if (password2Value !== passwordValue) {
             errorMessageFor(password2, "Password mismatch");
+            isValid = false;
         } else {
             successMessageFor(password2);
         }
 
-        // Redirect to index if all validations are successful
-        if (usernameValue && emailValue && passwordValue && password2Value) {
+        // Redirect only if all validations are successful
+        if (isValid) {
             window.location.href = './Index.html'; // Redirect to the index page
-        }
-        else {
-            
         }
     }
 
     function errorMessageFor(input, message) {
-        const formControl = input.parentElement; // We are referencing .form-control in our HTML
+        const formControl = input.parentElement;
         const small = formControl.querySelector("small");
-
-        // Add error message inside small
         small.innerText = message;
-
-        // Add error class
         formControl.className = "form-control error";
     }
 
