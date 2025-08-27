@@ -67,3 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
         formControl.className = "form-control success";
     }
 });
+
+ // Hide loading screen when page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.opacity = '0';
+                    document.body.classList.add('loaded');
+                    setTimeout(function() {
+                        document.getElementById('loading-screen').style.display = 'none';
+                    }, 500);
+                }, 1000); // Show loading screen for at least 1 second
+            });
