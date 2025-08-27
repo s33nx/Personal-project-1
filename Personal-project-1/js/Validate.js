@@ -13,10 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function checkInput() {
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
-        const passwordValue = password.value.trim();
-        const password2Value = password2.value.trim();
+        const passwordValue = password ? password.value.trim() : ""; // Check if password exists
+        const password2Value = password2 ? password2.value.trim() : ""; // Check if password2 exists
 
         let isValid = true; // Track overall validity
+
+        // Check if it's a login form (no password fields)
+        const isLoginForm = !password;
 
         if (usernameValue === "") {
             errorMessageFor(username, "Username cannot be blank");
@@ -32,21 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
             successMessageFor(email);
         }
 
-        if (passwordValue === "") {
-            errorMessageFor(password, "Password cannot be blank");
-            isValid = false;
-        } else {
-            successMessageFor(password);
-        }
+        // Only validate password fields if it's a signup form
+        if (!isLoginForm) {
+            if (passwordValue === "") {
+                errorMessageFor(password, "Password cannot be blank");
+                isValid = false;
+            } else {
+                successMessageFor(password);
+            }
 
-        if (password2Value === "") {
-            errorMessageFor(password2, "Confirm password cannot be blank");
-            isValid = false;
-        } else if (password2Value !== passwordValue) {
-            errorMessageFor(password2, "Password mismatch");
-            isValid = false;
-        } else {
-            successMessageFor(password2);
+            if (password2Value === "") {
+                errorMessageFor(password2, "Confirm password cannot be blank");
+                isValid = false;
+            } else if (password2Value !== passwordValue) {
+                errorMessageFor(password2, "Password mismatch");
+                isValid = false;
+            } else {
+                successMessageFor(password2);
+            }
         }
 
         // Redirect only if all validations are successful
