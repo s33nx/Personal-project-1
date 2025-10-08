@@ -84,3 +84,31 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 500);
                 }, 1000); // Show loading screen for at least 1 second
             });
+let imageVar = document.getElementById("image");
+let imageArray = ["../image/footwear/samples.jpeg", "../image/footwear/leather.jpeg", "../image/footwear/slippers.jpeg"];
+
+let imageIndex = 0;
+
+function slideShow(){
+    imageVar.setAttribute("src", imageArray[imageIndex]);
+    imageIndex++;
+
+    if (imageIndex >= imageArray.length){
+        imageIndex = 0
+    }
+}
+let imageVar2 = document.getElementById("image2");
+let imageArray2 = ["../image/body/clothes.jpeg","../image/body/hoodies.jpeg"];
+
+let imageIndex2 = 0;
+
+function slideShow2(){
+    imageVar2.setAttribute("src", imageArray2[imageIndex2]);
+    imageIndex2++;
+
+    if (imageIndex2 >= imageArray2.length){
+        imageIndex2 = 0
+    }
+}
+setInterval(slideShow2,5000);
+setInterval(slideShow, 5000);
