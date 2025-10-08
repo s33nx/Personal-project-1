@@ -11,6 +11,7 @@ body{
 }
 
 .different{
+    align-content: center;
     display: inline;
     text-decoration: none;
      background: url(../image/Background.png);
@@ -23,7 +24,19 @@ body{
     text-decoration: none;
     text-transform: uppercase;
     text-shadow: #0001;
-    
+
+}
+
+header {
+    text-align: center;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.about {
+    text-align: center;
 }
 
 
@@ -116,6 +129,9 @@ header a{
     text-decoration: none;
     
 }
+.samples{
+    max-width: 100%;
+}
 
 /* Loading Screen Styles */
 .loading-screen {
@@ -174,15 +190,15 @@ body > *:not(#loading-screen) {
 body.loaded > *:not(#loading-screen) {
     opacity: 1;
 }
-
+/* 
 .about{
-    display: flex;
+    display: block;
     align-content: center;
     align-items: center;
     border: 2px solid black;
     width: fit-content;
     
-}
+} */
 
 /* NEON DESIGN STYLES */
 .multi-color {
