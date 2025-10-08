@@ -1,13 +1,20 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background: url(../image/Background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
 }
 
 .different{
@@ -31,9 +38,8 @@ header {
     text-align: center;
 }
 
-.welcome {
-    text-align: center;
-}
+
+
 
 .about {
     text-align: center;
@@ -124,6 +130,7 @@ header {
 a{
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
 }
 header a{
     text-decoration: none;
@@ -131,6 +138,58 @@ header a{
 }
 .samples{
     max-width: 100%;
+}
+
+button.work-button {
+    background-color: #13044e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(19, 4, 78, 0.3);
+    margin-top: 15px;
+    display: inline-block;
+}
+
+button.work-button:hover {
+    background-color: #8e44ad;
+    transform: scale(0.100);
+    box-shadow: 0 6px 12px rgba(142, 68, 173, 0.5);
+}
+.img{
+   float: left;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+}
+.img2{
+   float: left;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+}
+#image {
+    max-width: 100%;
+    height: auto;
+}
+button{
+  color:#00ffff;
+  border: 0;
+  border-radius: 8px;
+  background-color: #13044e;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #8e44ad;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #8e44ad;
 }
 
 /* Loading Screen Styles */
@@ -160,20 +219,7 @@ header a{
     animation: pulse 2s infinite;
 }
 
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid white;
-    border-radius: 50%;
-    margin: 0 auto;
-    animation: spin 1s linear infinite;
-}
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
